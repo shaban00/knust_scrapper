@@ -138,14 +138,17 @@ def main():
 	if choice == 1:
 		url = students_urls[0]
 		url = base_url + student_directory + url
-		print(url)
+		#print(url)
 		end = 4
 		filename = "students.csv"
 		students_scrapper(url, end, filename)
 	elif choice == 2:
 		url = students_urls[1]
 		url = base_url + student_directory + url
-		print(url)
+		#print(url)
+		end = 328
+		filename = "students1.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 3:
 		url = students_urls[2]
