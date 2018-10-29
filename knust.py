@@ -44,6 +44,15 @@ except ImportError:
 	sys.exit(1)
 
 
+students_urls = ["https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=9&streamid=1&page=",
+"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=1&streamid=1&page=",
+"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=3&streamid=1&page=",
+"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=8&streamid=1&page=",
+"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=10&streamid=1&page=",
+"https://apps.knust.edu.gh/admissions/check/Home/LessEndowed?page=",
+"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=15&streamid=13&page="]
+
+
 def undergraduate_international_applicants():
 
 	base_url = "https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=9&streamid=1&page="
