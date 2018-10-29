@@ -124,7 +124,7 @@ def students_scrapper(url, end, filename):
 	except ConnectTimeout:
 		print("[-] Connection Timeout...")
 
-	print("Done...")	
+	print("\nDone...")	
 	
 	if os.path.exists(filename):
 		csvFile.close()
