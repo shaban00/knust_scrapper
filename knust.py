@@ -60,6 +60,11 @@ students_urls = [
 ]
 
 
+def main():
+	for url in students_urls:
+		print(url)
+
+
 def undergraduate_international_applicants():
 
 	base_url = "https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=9&streamid=1&page="
