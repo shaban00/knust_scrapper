@@ -74,10 +74,6 @@ students_urls = [
 
 
 def main():
-	try:
-		input = raw_input
-	except Exception as e:
-		raise e
 
 	choice = int(input("Enter choice >> "))
 	if choice == 1:
