@@ -200,17 +200,23 @@ def main():
 	elif choice == 10:
 		url = students_urls[9]
 		url = base_url + student_directory + url
-		print(url)
+		end = 20
+		filename = "students10.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 11:
 		url = students_urls[10]
 		url = base_url + student_directory + url
-		print(url)
+		end = 44
+		filename = "students11.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 12:
 		url = students_urls[11]
 		url = base_url + student_directory + url
-		print(url)
+		end = 69
+		filename = "students12.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 99:
 		sys.exit(1)
