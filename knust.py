@@ -74,7 +74,7 @@ students_urls = [
 ]
 
 
-def student_scrapper(url, end, filename):
+def students_scrapper(url, end, filename):
 	
 	os.mknod(filename)
 
@@ -140,7 +140,9 @@ def main():
 			url = students_urls[0]
 			url = base_url + student_directory + url
 			print(url)
-			#student_scrap(url)
+			end = 4
+			filename = "students.csv"
+			students_scrapper(url, end, filename)
 		elif choice == 2:
 			url = students_urls[1]
 			url = base_url + student_directory + url
@@ -201,7 +203,7 @@ def main():
 
 		else:
 			print("Invalid selection...")
-	mainchoice()
+	#mainchoice()
 
 
 def undergraduate_international_applicants():
