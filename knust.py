@@ -134,95 +134,113 @@ def main():
 
 	mainchoice()
 
-	choice = int(input("choice>> "))
-	if choice == 1:
-		url = students_urls[0]
-		url = base_url + student_directory + url
-		end = 4
-		filename = "students1.csv"
-		students_scrapper(url, end, filename)
-	elif choice == 2:
-		url = students_urls[1]
-		url = base_url + student_directory + url
-		end = 328
-		filename = "students2.csv"
-		students_scrapper(url, end, filename)
+	myLoop = True
 
-	elif choice == 3:
-		url = students_urls[2]
-		url = base_url + student_directory + url
-		end = 135
-		filename = "students3.csv"
-		students_scrapper(url, end, filename)
+	while myLoop:
 
-	elif choice == 4:
-		url = students_urls[3]
-		url = base_url + student_directory + url
-		end = 2
-		filename = "students4.csv"
-		students_scrapper(url, end, filename)
+		choice = int(input("choice>> "))
+		if choice == 1:
+			url = students_urls[0]
+			url = base_url + student_directory + url
+			end = 4
+			filename = "students1.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 5:
-		url = students_urls[4]
-		url = base_url + student_directory + url
-		end = 9
-		filename = "students5.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 2:
+			url = students_urls[1]
+			url = base_url + student_directory + url
+			end = 328
+			filename = "students2.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 6:
-		url = students_urls[5]
-		url = base_url + student_directory + url
-		end = 33
-		filename = "students6.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 3:
+			url = students_urls[2]
+			url = base_url + student_directory + url
+			end = 135
+			filename = "students3.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 7:
-		url = students_urls[6]
-		url = base_url + student_directory + url
-		end = 21
-		filename = "students7.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 4:
+			url = students_urls[3]
+			url = base_url + student_directory + url
+			end = 2
+			filename = "students4.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 8:
-		url = students_urls[7]
-		url = base_url + student_directory + url
-		end = 4
-		filename = "students8.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 5:
+			url = students_urls[4]
+			url = base_url + student_directory + url
+			end = 9
+			filename = "students5.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 9:
-		url = students_urls[8]
-		url = base_url + student_directory + url
-		end = 54
-		filename = "students9.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 6:
+			url = students_urls[5]
+			url = base_url + student_directory + url
+			end = 33
+			filename = "students6.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 10:
-		url = students_urls[9]
-		url = base_url + student_directory + url
-		end = 20
-		filename = "students10.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 7:
+			url = students_urls[6]
+			url = base_url + student_directory + url
+			end = 21
+			filename = "students7.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 11:
-		url = students_urls[10]
-		url = base_url + student_directory + url
-		end = 44
-		filename = "students11.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 8:
+			url = students_urls[7]
+			url = base_url + student_directory + url
+			end = 4
+			filename = "students8.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 12:
-		url = students_urls[11]
-		url = base_url + student_directory + url
-		end = 69
-		filename = "students12.csv"
-		students_scrapper(url, end, filename)
+		elif choice == 9:
+			url = students_urls[8]
+			url = base_url + student_directory + url
+			end = 54
+			filename = "students9.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	elif choice == 99:
-		sys.exit(1)
+		elif choice == 10:
+			url = students_urls[9]
+			url = base_url + student_directory + url
+			end = 20
+			filename = "students10.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
 
-	else:
-		print("Invalid selection...")
+		elif choice == 11:
+			url = students_urls[10]
+			url = base_url + student_directory + url
+			end = 44
+			filename = "students11.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
+
+		elif choice == 12:
+			url = students_urls[11]
+			url = base_url + student_directory + url
+			end = 69
+			filename = "students12.csv"
+			students_scrapper(url, end, filename)
+			myLoop = False
+
+		elif choice == 99:
+			sys.exit(1)
+
+		else:
+			print("Invalid selection...")
+	mainchoice()
 
 
 
