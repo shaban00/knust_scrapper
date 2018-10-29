@@ -132,9 +132,11 @@ def students_scrapper(url, end, filename):
 
 def main():
 
-	mainchoice()
+	clear()
+	banner()
 
 	myLoop = True
+	mainchoice()
 
 	while myLoop:
 
