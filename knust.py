@@ -74,7 +74,7 @@ students_urls = [
 ]
 
 
-def student_scrap(url):
+def student_scrapper(url):
 	
 	os.mknod("students.csv")
 
@@ -123,7 +123,6 @@ def student_scrap(url):
 
 	except ConnectTimeout:
 		print("[-] Connection Timeout...")
-		print("[*] Retrying...")
 
 	print("Done...")	
 	
