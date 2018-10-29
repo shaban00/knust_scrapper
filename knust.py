@@ -38,6 +38,7 @@ try:
 	from requests import ConnectTimeout
 except ImportError:
 	print("Warning: missing package 'requests' is required")
+
 try:
 	from bs4 import BeautifulSoup
 except ImportError:
@@ -123,6 +124,7 @@ def student_scrap(url):
 
 def main():
 
+	mainchoice()
 	choice = int(input("Enter choice >> "))
 	if choice == 1:
 		url = students_urls[0]
