@@ -125,13 +125,19 @@ def student_scrap(url):
 def main():
 
 	mainchoice()
-	choice = int(input("Enter choice >> "))
-	if choice == 1:
-		url = students_urls[0]
-		url = base_url + student_directory + url
-		student_scrap(url)
-	else:
-		print("Nothing selected...")
+
+	while True:
+		choice = int(input("Enter choice >> "))
+		if choice == 1:
+			url = students_urls[0]
+			url = base_url + student_directory + url
+			print(url)
+			#student_scrap(url)
+
+		elif choice == 99:
+			sys.exit(1)
+		else:
+			print("Nothing selected...")
 
 
 def undergraduate_international_applicants():
