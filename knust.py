@@ -74,7 +74,14 @@ students_urls = [
 
 
 def main():
-	for url in students_urls:
+	try:
+		input = raw_input
+	except Exception as e:
+		raise e
+
+	choice = input("Enter choice >> ")
+	if choice == 1:
+		url = students_urls[0]
 		print(base_url + student_directory + url)
 
 
