@@ -138,6 +138,7 @@ def main():
 			sys.exit(1)
 		else:
 			print("Nothing selected...")
+	mainchoice()
 
 
 def undergraduate_international_applicants():
