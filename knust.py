@@ -242,6 +242,7 @@ def main():
 
 		else:
 			print("Invalid selection...")
+			clear()
 			mainchoice()
 
 
