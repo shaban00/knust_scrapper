@@ -772,56 +772,56 @@ def distance_postgraduate_applicants():
 	if os.path.exists("Distance-Postgraduate-Applicants.csv"):
 		csvFile.close()
 
-def main():
-	mainchoice()
+# def main():
+# 	mainchoice()
 
-	choice = int(input(">> "))
-	if choice == 1:
-		undergraduate()
+# 	choice = int(input(">> "))
+# 	if choice == 1:
+# 		undergraduate()
 
-		choice = int(input(">> "))
-		if choice == 1:
-			undergraduate_international_applicants()
-		elif choice == 2:
-			undergraduate_ssce_wassce_applicants()
-		elif choice == 3:
-			undergraduate_fee_paying_ssce_wassce_applicants()
-		elif choice == 4:
-			undergraduate_mature_foreign_applicants()
-		elif choice == 5:
-			undergraduate_fee_paying_foreign_applicants()
-		elif choice == 6:
-			undergraduate_less_endowed_applicants()
-		elif choice == 7:
-			undergraduate_nmtc_upgrade_applicants()
-		else:
-			print("Invalid entry")
+# 		choice = int(input(">> "))
+# 		if choice == 1:
+# 			undergraduate_international_applicants()
+# 		elif choice == 2:
+# 			undergraduate_ssce_wassce_applicants()
+# 		elif choice == 3:
+# 			undergraduate_fee_paying_ssce_wassce_applicants()
+# 		elif choice == 4:
+# 			undergraduate_mature_foreign_applicants()
+# 		elif choice == 5:
+# 			undergraduate_fee_paying_foreign_applicants()
+# 		elif choice == 6:
+# 			undergraduate_less_endowed_applicants()
+# 		elif choice == 7:
+# 			undergraduate_nmtc_upgrade_applicants()
+# 		else:
+# 			print("Invalid entry")
 
-	elif choice == 2:
-		postgraduate()
+# 	elif choice == 2:
+# 		postgraduate()
 
-		choice = int(input(">> "))
-		if choice == 1:
-			postgraduate_international_applicants()
-		elif choice == 2:
-			postgraduate_ghanaian_applicants()
-		else:
-			print("Invalid entry")
+# 		choice = int(input(">> "))
+# 		if choice == 1:
+# 			postgraduate_international_applicants()
+# 		elif choice == 2:
+# 			postgraduate_ghanaian_applicants()
+# 		else:
+# 			print("Invalid entry")
 
-	elif choice == 3:
-		distancelearning()
+# 	elif choice == 3:
+# 		distancelearning()
 
-		choice = int(input(">> "))
-		if choice == 1:
-			distance_diploma_applicants()
-		elif choice == 2:
-			distance_undergraduate_applicants()
-		elif choice == 3:
-			distance_postgraduate_applicants()
-		else:
-			print("Invalid entry")
-	else:
-		print("Invalid entry")
+# 		choice = int(input(">> "))
+# 		if choice == 1:
+# 			distance_diploma_applicants()
+# 		elif choice == 2:
+# 			distance_undergraduate_applicants()
+# 		elif choice == 3:
+# 			distance_postgraduate_applicants()
+# 		else:
+# 			print("Invalid entry")
+# 	else:
+# 		print("Invalid entry")
 
 
 if __name__ == '__main__':
