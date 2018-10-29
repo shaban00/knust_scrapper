@@ -83,6 +83,8 @@ def main():
 	if choice == 1:
 		url = students_urls[0]
 		print(base_url + student_directory + url)
+	else:
+		print("Nothing selected...")
 
 
 def undergraduate_international_applicants():
