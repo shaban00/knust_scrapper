@@ -139,39 +139,49 @@ def main():
 		url = students_urls[0]
 		url = base_url + student_directory + url
 		end = 4
-		filename = "students.csv"
+		filename = "students1.csv"
 		students_scrapper(url, end, filename)
 	elif choice == 2:
 		url = students_urls[1]
 		url = base_url + student_directory + url
 		end = 328
-		filename = "students1.csv"
+		filename = "students2.csv"
 		students_scrapper(url, end, filename)
 
 	elif choice == 3:
 		url = students_urls[2]
 		url = base_url + student_directory + url
-		print(url)
+		end = 135
+		filename = "students3.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 4:
 		url = students_urls[3]
 		url = base_url + student_directory + url
-		print(url)
+		end = 2
+		filename = "students4.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 5:
 		url = students_urls[4]
 		url = base_url + student_directory + url
-		print(url)
+		end = 9
+		filename = "students5.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 6:
 		url = students_urls[5]
 		url = base_url + student_directory + url
-		print(url)
+		end = 33
+		filename = "students6.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 7:
 		url = students_urls[6]
 		url = base_url + student_directory + url
-		print(url)
+		end = 21
+		filename = "students7.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 8:
 		url = students_urls[7]
