@@ -76,7 +76,7 @@ students_urls = [
 
 def main():
 	for url in students_urls:
-		print(url)
+		print(base_url + student_directory + url)
 
 
 def undergraduate_international_applicants():
