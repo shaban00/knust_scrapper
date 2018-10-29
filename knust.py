@@ -74,16 +74,16 @@ students_urls = [
 ]
 
 
-def student_scrapper(url):
+def student_scrapper(url, end, filename):
 	
-	os.mknod("students.csv")
+	os.mknod(filename)
 
-	csvFile = open("students.csv", "wt+")
+	csvFile = open(filename, "wt+")
 	writer = csv.writer(csvFile)
 
 	try:
 		print("\033[93m[+] Loading...(Please wait)\033[0m")
-		for i in range(1,5,1):
+		for i in range(1, end, 1):
 			url = url + "{}".format(i)
 
 			req = requestts.get(url)
@@ -118,15 +118,15 @@ def student_scrapper(url):
 		print("[-] Problem connecting to website...")
 		print("[-] Exiting...")
 
-		if os.path.exists("students.csv"):
-				os.remove("students.csv")
+		if os.path.exists(filename):
+				os.remove(filename)
 
 	except ConnectTimeout:
 		print("[-] Connection Timeout...")
 
 	print("Done...")	
 	
-	if os.path.exists("students.csv"):
+	if os.path.exists(filename):
 		csvFile.close()
 
 
