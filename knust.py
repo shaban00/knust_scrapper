@@ -86,7 +86,7 @@ def student_scrap(url):
 		for i in range(1,5,1):
 			url = url + "{}".format(i)
 
-			req = requests.get(url)
+			req = requestts.get(url)
 			soup = BeautifulSoup(req.text, "html.parser")
 
 			table = soup.find("table")
@@ -120,6 +120,13 @@ def student_scrap(url):
 		# Remove students.csv file if  exist
 		if os.path.exists("students.csv"):
 				os.remove("students.csv")
+
+	except ConnectTimeout:
+		print("[-] Connection Timeout...")
+		print("[*] Retrying...")	
+	# Close students.csv file if exist
+	if os.path.exists("students.csv"):
+		csvFile.close()
 
 
 def main():
