@@ -73,6 +73,55 @@ students_urls = [
 ]
 
 
+def student_scrap(url):
+	
+	if not os.path.exits("students.csv"):
+		os.mknod("students.csv")
+
+	csvFile = open("students.csv", "wt+")
+	writer = csv.writer(csvFile)
+
+	try:
+		print("\033[93m[+] Loading...(Please wait)\033[0m")
+		for i in range(1,5,1):
+			url = url + "{}".format(i)
+
+			req = requests.get(url)
+			soup = BeautifulSoup(req.text, "html.parser")
+
+			table = soup.find("table")
+			rows = table.find_all("tr")
+			sys.stdout.write("#")
+			sys.stdout.flush()
+
+			try:
+				for row in rows:
+					csvRow = []
+					for cell in row.find_all(["td", "th"]):
+						# Correct UnicodeError
+						csvRow.append(cell.get_text().encode("ascii", "ignore"))
+						
+						if len(csvRow) == 4:
+							if csvRow[0].isdigit():
+								csvRow.pop(0)
+
+								if csvRow[0].isdigit():
+									writer.writerow(csvRow)
+							else:
+								None
+						else:
+							None
+			except Exception as e:
+				print("No table rows found")
+
+	except ConnectionError:
+		print("[-] Problem connecting to website...")
+		print("[-] Exiting...")
+		# Remove students.csv file if  exist
+		if os.path.exists("students.csv"):
+				os.remove("students.csv")
+
+
 def main():
 
 	choice = int(input("Enter choice >> "))
