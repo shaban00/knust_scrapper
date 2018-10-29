@@ -186,12 +186,16 @@ def main():
 	elif choice == 8:
 		url = students_urls[7]
 		url = base_url + student_directory + url
-		print(url)
+		end = 4
+		filename = "students8.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 9:
 		url = students_urls[8]
 		url = base_url + student_directory + url
-		print(url)
+		end = 54
+		filename = "students9.csv"
+		students_scrapper(url, end, filename)
 
 	elif choice == 10:
 		url = students_urls[9]
