@@ -46,7 +46,7 @@ except ImportError:
 	sys.exit(1)
 
 
-base_url = "https://apps.knust.edu/"
+base_url = "https://apps.knust.edu"
 student_directory= "admissions/check/Home/"
 
 status_code = requests.get(base_url)
