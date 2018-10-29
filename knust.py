@@ -113,11 +113,10 @@ def students_scrapper(url, end, filename):
 						else:
 							None
 			except Exception as e:
-				print("No table rows found")
+				print("No rows found")
 
 	except ConnectionError:
-		print("[-] Problem connecting to website...")
-		print("[-] Exiting...")
+		print("[-] Problem connecting to {}...".format(base_url))
 
 		if os.path.exists(filename):
 				os.remove(filename)
