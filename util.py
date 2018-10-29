@@ -41,49 +41,13 @@ def clear():
 	else:
 		None
 
-def animate():
-	while True:
-		sys.stdout.write("\r[+] Loading... |")
-		time.sleep(0.001)
-		sys.stdout.write("\r[+] Loading... /")
-		time.sleep(0.001)
-		sys.stdout.write("\r[+] Loading... -")
-		time.sleep(0.001)
-		sys.stdout.write("\r[+] Loading... \\")
-		time.sleep(0.001)
-	sys.stdout.write("\r[+] Done...")
-
 
 def python_version():
 	version = sys.version[:5].split(".")[0]
 	return version
 
-def progress2():
-        toolbar_width = 50
-
-        sys.stdout.write("[%s]" % (" " * toolbar_width))
-        sys.stdout.flush()
-        sys.stdout.write("\b" * (toolbar_width + 1))
-
-        for i in range(toolbar_width):
-                time.sleep(0.1)
-                sys.stdout.write("#")
-                sys.stdout.flush()
-        sys.stdout.write("\n")
-
-
 
 def mainchoice():
-	print("+------------------------------------------------------------------------+")
-	print("+                                                                        +")
-	print("+ 1. Undergraduate                                                       +")
-	print("+ 2. Postgraduate                                                        +")
-	print("+ 3. Distance Learning                                                   +")
-	print("+ 99. Exit                                                               +")
-	print("+                                                                        +")
-	print("+------------------------------------------------------------------------+")
-
-def undergraduate():
 	print("+------------------------------------------------------------------------+")
 	print("+                                                                        +")
 	print("+*******Undergraduate********                                            +")
@@ -103,31 +67,10 @@ def undergraduate():
 	print("+                                                                        +")
 	print("+*******Distance Learning********                                        +")
 	print("+                                                                        +")
-	print("+ 10. Diploma Applicants                                                  +")
-	print("+ 11. Undergraduate Applicants                                            +")
-	print("+ 12. Postgraduate Applicants                                             +")
+	print("+ 10. Diploma Applicants                                                 +")
+	print("+ 11. Undergraduate Applicants                                           +")
+	print("+ 12. Postgraduate Applicants                                            +")
 	print("+                                                                        +")
 	print("+ 99. Exit                                                               +")
 	print("+                                                                        +")
 	print("+------------------------------------------------------------------------+")
-
-def postgraduate():
-	print("+------------------------------------------------------------------------+")
-	print("+                                                                        +")
-	print("+*******Undergraduate********                                            +")
-	print("+                                                                        +")
-	print("+ 1. International Applicants                                            +")
-	print("+ 2. Ghanaian Applicants                                                 +")
-	print("+ 99. Back                                                               +")
-	print("+                                                                        +")
-	print("+------------------------------------------------------------------------+")
-
-def distancelearning():
-	print("+------------------------------------------------------------------------+")
-	print("+                                                                        +")
-	print("+ 1. Diploma Applicants                                                  +")
-	print("+ 2. Undergraduate Applicants                                            +")
-	print("+ 3. Postgraduate Applicants                                             +")
-	print("+ 99. Back                                                               +")
-	print("+                                                                        +")
-	print("+------------------------------------------------------------------------+") 
