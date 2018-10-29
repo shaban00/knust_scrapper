@@ -135,8 +135,9 @@ def main():
 	mainchoice()
 
 	#choice = int(input("choice>> "))
-	choice = str(input("choice>> "))
-	if "1" in choice:
+	choice = input("choice>> ")
+	choice = list(choice)
+	if 1 in choice:
 		url = students_urls[0]
 		url = base_url + student_directory + url
 		end = 4
