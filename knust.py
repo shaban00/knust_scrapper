@@ -190,8 +190,9 @@ def main():
 
 		elif choice == 99:
 			sys.exit(1)
+
 		else:
-			print("Nothing selected...")
+			print("Invalid selection...")
 	mainchoice()
 
 
