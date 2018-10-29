@@ -830,8 +830,8 @@ def distance_postgraduate_applicants():
 
 
 if __name__ == '__main__':
-	clear()
-	banner()
+	# clear()
+	# banner()
 	# undergraduate_international_applicants()
 	# undergraduate_ssce_wassce_applicants()
 	# undergraduate_fee_paying_ssce_wassce_applicants()
