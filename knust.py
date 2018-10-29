@@ -133,6 +133,60 @@ def main():
 			url = base_url + student_directory + url
 			print(url)
 			#student_scrap(url)
+		elif choice == 2:
+			url = students_urls[1]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 3:
+			url = students_urls[2]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 4:
+			url = students_urls[3]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 5:
+			url = students_urls[4]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 6:
+			url = students_urls[5]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 7:
+			url = students_urls[6]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 8:
+			url = students_urls[7]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 9:
+			url = students_urls[8]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 10:
+			url = students_urls[9]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 11:
+			url = students_urls[10]
+			url = base_url + student_directory + url
+			print(url)
+
+		elif choice == 12:
+			url = students_urls[11]
+			url = base_url + student_directory + url
+			print(url)
 
 		elif choice == 99:
 			sys.exit(1)
