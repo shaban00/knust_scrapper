@@ -30,6 +30,9 @@ import time
 #3. Postgraduate Applicants : https://apps.knust.edu.gh/admissions/check/Home/Distance?group=6&page=1         total_pages=69
 #--------------
 
+
+base_url = "https://apps.knust.edu"
+
 try:
 	import requests
 	from requests import ConnectionError
