@@ -47,6 +47,8 @@ except ImportError:
 
 
 base_url = "https://apps.knust.edu/"
+student_directory= "admissions/check/Home/"
+
 status_code = requests.get(base_url).status_code
 
 if status_code == 200:
