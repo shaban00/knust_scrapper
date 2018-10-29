@@ -75,8 +75,7 @@ students_urls = [
 
 def student_scrap(url):
 	
-	if not os.path.exits("students.csv"):
-		os.mknod("students.csv")
+	os.mknod("students.csv")
 
 	csvFile = open("students.csv", "wt+")
 	writer = csv.writer(csvFile)
