@@ -31,7 +31,6 @@ import time
 #--------------
 
 
-base_url = "https://apps.knust.edu"
 
 try:
 	import requests
@@ -44,6 +43,16 @@ try:
 except ImportError:
 	print("Warning: missing package 'bs4' is required")
 	print("Fix: 'sudo pip install -r requirements.txt'")
+	sys.exit(1)
+
+
+base_url = "https://apps.knust.edu/"
+status_code = requests.get(base_url).status_code
+
+if status_code == 200:
+	None
+else:
+	print("{} is down...".format(base_url))
 	sys.exit(1)
 
 
