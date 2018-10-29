@@ -142,84 +142,84 @@ def main():
 		end = 4
 		filename = "students1.csv"
 		students_scrapper(url, end, filename)
-	if 2 in choice:
+	if "2" in choice:
 		url = students_urls[1]
 		url = base_url + student_directory + url
 		end = 328
 		filename = "students2.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 3:
+	if "3" in choice:
 		url = students_urls[2]
 		url = base_url + student_directory + url
 		end = 135
 		filename = "students3.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 4:
+	if "4" in choice:
 		url = students_urls[3]
 		url = base_url + student_directory + url
 		end = 2
 		filename = "students4.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 5:
+	if "5" in choice:
 		url = students_urls[4]
 		url = base_url + student_directory + url
 		end = 9
 		filename = "students5.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 6:
+	if "6" in choice:
 		url = students_urls[5]
 		url = base_url + student_directory + url
 		end = 33
 		filename = "students6.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 7:
+	if "7" in choice:
 		url = students_urls[6]
 		url = base_url + student_directory + url
 		end = 21
 		filename = "students7.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 8:
+	if "8" in choice:
 		url = students_urls[7]
 		url = base_url + student_directory + url
 		end = 4
 		filename = "students8.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 9:
+	if "9" in choice:
 		url = students_urls[8]
 		url = base_url + student_directory + url
 		end = 54
 		filename = "students9.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 10:
+	if "10" in choice:
 		url = students_urls[9]
 		url = base_url + student_directory + url
 		end = 20
 		filename = "students10.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 11:
+	if "11" in choice:
 		url = students_urls[10]
 		url = base_url + student_directory + url
 		end = 44
 		filename = "students11.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 12:
+	if "12" in choice:
 		url = students_urls[11]
 		url = base_url + student_directory + url
 		end = 69
 		filename = "students12.csv"
 		students_scrapper(url, end, filename)
 
-	elif choice == 99:
+	elif choice == "99":
 		sys.exit(1)
 
 	else:
