@@ -117,14 +117,16 @@ def student_scrap(url):
 	except ConnectionError:
 		print("[-] Problem connecting to website...")
 		print("[-] Exiting...")
-		# Remove students.csv file if  exist
+
 		if os.path.exists("students.csv"):
 				os.remove("students.csv")
 
 	except ConnectTimeout:
 		print("[-] Connection Timeout...")
-		print("[*] Retrying...")	
-	# Close students.csv file if exist
+		print("[*] Retrying...")
+
+	print("Done...")	
+	
 	if os.path.exists("students.csv"):
 		csvFile.close()
 
