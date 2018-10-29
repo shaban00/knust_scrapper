@@ -86,7 +86,7 @@ def students_scrapper(url, end, filename):
 		for i in range(1, end, 1):
 			url = url + "{}".format(i)
 
-			req = requestts.get(url)
+			req = requests.get(url)
 			soup = BeautifulSoup(req.text, "html.parser")
 
 			table = soup.find("table")
