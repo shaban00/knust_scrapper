@@ -51,11 +51,11 @@ student_directory= "admissions/check/Home/"
 
 status_code = requests.get(base_url).status_code
 
-if status_code == 200:
-	None
-else:
-	print("{} is down...".format(base_url))
-	sys.exit(1)
+# if status_code == 200:
+# 	None
+# else:
+# 	print("{} is down...".format(base_url))
+# 	sys.exit(1)
 
 
 students_urls = [
