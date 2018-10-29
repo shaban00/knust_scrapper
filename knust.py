@@ -79,7 +79,7 @@ def main():
 	except Exception as e:
 		raise e
 
-	choice = input("Enter choice >> ")
+	choice = input(int("Enter choice >> "))
 	if choice == 1:
 		url = students_urls[0]
 		print(base_url + student_directory + url)
