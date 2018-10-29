@@ -39,12 +39,7 @@ def clear():
 	elif os.name == "darwin":
 		os.system("clear")
 	else:
-		None
-
-
-def python_version():
-	version = sys.version[:5].split(".")[0]
-	return version
+		os.system("clear")
 
 
 def mainchoice():
