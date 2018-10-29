@@ -33,9 +33,9 @@ import time
 
 
 try:
-	import requests
-	from requests import ConnectionError
-	from requests import ConnectTimeout
+	#import requests
+	from requests import *
+	#from requests import ConnectTimeout
 except ImportError:
 	print("Warning: missing package 'requests' is required")
 
