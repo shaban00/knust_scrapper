@@ -76,7 +76,8 @@ students_urls = [
 
 def students_scrapper(url, end, filename):
 	
-	os.mknod(filename)
+	if not os.path.exists(filename):
+		os.mknod(filename)
 
 	csvFile = open(filename, "wt+")
 	writer = csv.writer(csvFile)
