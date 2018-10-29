@@ -59,18 +59,18 @@ else:
 
 
 students_urls = [
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=9&streamid=1&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=1&streamid=1&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=3&streamid=1&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=8&streamid=1&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=10&streamid=1&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/LessEndowed?page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=15&streamid=13&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=11&streamid=2&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=12&streamid=2&page",
-		"https://apps.knust.edu.gh/admissions/check/Home/Distance?group=35&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/Distance?group=5&page=",
-		"https://apps.knust.edu.gh/admissions/check/Home/Distance?group=6&page="
+		"ApplicantList?offer=9&streamid=1&page=",
+		"ApplicantList?offer=1&streamid=1&page=",
+		"ApplicantList?offer=3&streamid=1&page=",
+		"ApplicantList?offer=8&streamid=1&page=",
+		"ApplicantList?offer=10&streamid=1&page=",
+		"LessEndowed?page=",
+		"ApplicantList?offer=15&streamid=13&page=",
+		"ApplicantList?offer=11&streamid=2&page=",
+		"ApplicantList?offer=12&streamid=2&page",
+		"Distance?group=35&page=",
+		"Distance?group=5&page=",
+		"Distance?group=6&page="
 ]
 
 
