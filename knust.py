@@ -126,6 +126,7 @@ def main():
 	choice = int(input("Enter choice >> "))
 	if choice == 1:
 		url = students_urls[0]
+		url = base_url + student_directory + url
 		student_scrap(url)
 	else:
 		print("Nothing selected...")
