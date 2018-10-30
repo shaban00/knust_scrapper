@@ -50,12 +50,12 @@ except ImportError:
 base_url = "https://apps.knust.edu.gh/"
 student_directory= "admissions/check/Home/"
 
-status_code = requests.get(base_url).status_code
-if status_code == 200:
-	None
-else:
-	print("{} is down...".format(base_url))
-	sys.exit(1)
+# status_code = requests.get(base_url).status_code
+# if status_code == 200:
+# 	None
+# else:
+# 	print("{} is down...".format(base_url))
+# 	sys.exit(1)
 
 
 students_urls = [
@@ -116,15 +116,15 @@ def students_scrapper(url, end, filename):
 				print("No rows found")
 
 	except ConnectionError:
-		print("[-] Problem connecting to {}...".format(base_url))
+		print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url))
 
 		if os.path.exists(filename):
 				os.remove(filename)
 
 	except ConnectTimeout:
-		print("[-] Connection Timeout...")
+		print("\033[91m[-]\033[0m Connection Timeout...")
 
-	print("\n[*] Done...")	
+	print("\n\033[92m[*]\033[0m Done...")	
 	
 	if os.path.exists(filename):
 		csvFile.close()
@@ -241,7 +241,6 @@ def main():
 			sys.exit(1)
 
 		else:
-			print("Invalid selection...")
 			clear()
 			mainchoice()
 
