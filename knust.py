@@ -50,12 +50,16 @@ except ImportError:
 base_url = "https://apps.knust.edu.gh/"
 student_directory= "admissions/check/Home/"
 
-# status_code = requests.get(base_url).status_code
-# if status_code == 200:
-# 	None
-# else:
-# 	print("{} is down...".format(base_url))
-# 	sys.exit(1)
+try:
+	status_code = requests.get(base_url).status_code
+	if status_code == 200:
+		None
+	else:
+		print("{} is down".format(base_url))
+		sys.exit(1)
+except ConnectionError:
+	print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url))
+	sys.exit(1)
 
 
 students_urls = [
@@ -140,7 +144,7 @@ def main():
 
 	while myLoop:
 
-		choice = int(input("\033[91mchoice>>\033[0m "))
+		choice = int(input("\033[92mchoice>>\033[0m "))
 		if choice == 1:
 			url = students_urls[0]
 			url = base_url + student_directory + url
@@ -238,6 +242,8 @@ def main():
 			myLoop = False
 
 		elif choice == 99:
+			print("\033[92m[*]\033[0m Exiting...")
+			time.sleep(1)
 			sys.exit(1)
 
 		else:
