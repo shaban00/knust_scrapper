@@ -140,7 +140,7 @@ def main():
 
 	while myLoop:
 
-		choice = int(input("\033[94mchoice>>\033[0m "))
+		choice = int(input("\033[91mchoice>>\033[0m "))
 		if choice == 1:
 			url = students_urls[0]
 			url = base_url + student_directory + url
