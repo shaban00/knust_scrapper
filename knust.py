@@ -14,8 +14,7 @@ import time
 #3. Fee paying Applicants(SSSCE/WASSCE) : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=3&streamid=1&page=1         total_pages=135
 #4. Mature/Other/Ghanaian with foreign results Applicants : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=8&streamid=1&page=1         total_pages=2
 #5. Fee paying Applicants (Mature/Other/Ghanaian with foreign results) : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=10&streamid=1&page=1         total_pages=9
-#6. Applicants from Less Endowed Schools : https://apps.knust.edu.gh/admissions/check/Home/LessEndowed?page=1         total_pages=33
-#7. NMTC Upgrade : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=15&streamid=13&page=1         total_pages=21
+#6. NMTC Upgrade : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=15&streamid=13&page=1         total_pages=21
 
 #-----------------------
 #Postgraduate Applicants
@@ -23,22 +22,15 @@ import time
 #1. International Applicants : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=11&streamid=2&page=1         total_pages=4
 #2. Ghanaian Applicants : https://apps.knust.edu.gh/admissions/check/Home/ApplicantList?offer=12&streamid=2&page=1         total_pages=54
 
-#----------------
-#Distance Learning Applicants
-#1. Diploma Applicants : https://apps.knust.edu.gh/admissions/check/Home/Distance?group=35&page=1         total_pages=20
-#2. Undergraduate Applicants : https://apps.knust.edu.gh/admissions/check/Home/Distance?group=5&page=1         total_pages=44
-#3. Postgraduate Applicants : https://apps.knust.edu.gh/admissions/check/Home/Distance?group=6&page=1         total_pages=69
-#--------------
 
 
-
+# Import requests
 try:
 	import requests
 	from requests import ConnectionError
-	from requests import ConnectTimeout
 except ImportError:
 	print("Warning: missing package 'requests' is required")
-
+# Import bs4
 try:
 	from bs4 import BeautifulSoup
 except ImportError:
@@ -47,39 +39,24 @@ except ImportError:
 	sys.exit(1)
 
 
-base_url = "https://apps.knust.edu.gh/"
-student_directory= "admissions/check/Home/"
+# Base url for website
+base_url = "https://apps.knust.edu.gh/admissions/check/Home/"
 
-try:
-	status_code = requests.get(base_url).status_code
-	if status_code == 200:
-		None
-	else:
-		print("{} is down".format(base_url))
-		sys.exit(1)
-except ConnectionError:
-	print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url))
-	sys.exit(1)
-
-
+# List of students path urls
 students_urls = [
 		"ApplicantList?offer=9&streamid=1&page=",
 		"ApplicantList?offer=1&streamid=1&page=",
 		"ApplicantList?offer=3&streamid=1&page=",
 		"ApplicantList?offer=8&streamid=1&page=",
 		"ApplicantList?offer=10&streamid=1&page=",
-		"LessEndowed?page=",
 		"ApplicantList?offer=15&streamid=13&page=",
 		"ApplicantList?offer=11&streamid=2&page=",
-		"ApplicantList?offer=12&streamid=2&page",
-		"Distance?group=35&page=",
-		"Distance?group=5&page=",
-		"Distance?group=6&page="
+		"ApplicantList?offer=12&streamid=2&page"
 ]
 
 
 def students_scrapper(url, end, filename):
-	
+
 	if not os.path.exists(filename):
 		os.mknod(filename)
 
@@ -88,10 +65,11 @@ def students_scrapper(url, end, filename):
 
 	try:
 		print("\033[93m[+] Loading...(Please wait)\033[0m")
-		for i in range(1, end, 1):
-			url = url + "{}".format(i)
+		for i in range(1, end+1):
+			# url of pages
+			full_url = url + "{}".format(i)
 
-			req = requests.get(url)
+			req = requests.get(full_url)
 			soup = BeautifulSoup(req.text, "html.parser")
 
 			table = soup.find("table")
@@ -119,14 +97,13 @@ def students_scrapper(url, end, filename):
 			except Exception as e:
 				print("No rows found")
 
+			full_url = url
+
 	except ConnectionError:
 		print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url))
 
 		if os.path.exists(filename):
 				os.remove(filename)
-
-	except ConnectTimeout:
-		print("\033[91m[-]\033[0m Connection Timeout...")
 
 	print("\n\033[92m[*]\033[0m Done...")	
 	
@@ -147,7 +124,7 @@ def main():
 		choice = int(input("\033[92mchoice>>\033[0m "))
 		if choice == 1:
 			url = students_urls[0]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 4
 			filename = "students1.csv"
 			students_scrapper(url, end, filename)
@@ -155,7 +132,7 @@ def main():
 
 		elif choice == 2:
 			url = students_urls[1]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 328
 			filename = "students2.csv"
 			students_scrapper(url, end, filename)
@@ -163,7 +140,7 @@ def main():
 
 		elif choice == 3:
 			url = students_urls[2]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 135
 			filename = "students3.csv"
 			students_scrapper(url, end, filename)
@@ -171,7 +148,7 @@ def main():
 
 		elif choice == 4:
 			url = students_urls[3]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 2
 			filename = "students4.csv"
 			students_scrapper(url, end, filename)
@@ -179,7 +156,7 @@ def main():
 
 		elif choice == 5:
 			url = students_urls[4]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 9
 			filename = "students5.csv"
 			students_scrapper(url, end, filename)
@@ -187,57 +164,25 @@ def main():
 
 		elif choice == 6:
 			url = students_urls[5]
-			url = base_url + student_directory + url
-			end = 33
+			url = base_url + url
+			end = 21
 			filename = "students6.csv"
 			students_scrapper(url, end, filename)
 			myLoop = False
 
 		elif choice == 7:
 			url = students_urls[6]
-			url = base_url + student_directory + url
-			end = 21
+			url = base_url + url
+			end = 4
 			filename = "students7.csv"
 			students_scrapper(url, end, filename)
 			myLoop = False
 
 		elif choice == 8:
 			url = students_urls[7]
-			url = base_url + student_directory + url
-			end = 4
-			filename = "students8.csv"
-			students_scrapper(url, end, filename)
-			myLoop = False
-
-		elif choice == 9:
-			url = students_urls[8]
-			url = base_url + student_directory + url
+			url = base_url + url
 			end = 54
-			filename = "students9.csv"
-			students_scrapper(url, end, filename)
-			myLoop = False
-
-		elif choice == 10:
-			url = students_urls[9]
-			url = base_url + student_directory + url
-			end = 20
-			filename = "students10.csv"
-			students_scrapper(url, end, filename)
-			myLoop = False
-
-		elif choice == 11:
-			url = students_urls[10]
-			url = base_url + student_directory + url
-			end = 44
-			filename = "students11.csv"
-			students_scrapper(url, end, filename)
-			myLoop = False
-
-		elif choice == 12:
-			url = students_urls[11]
-			url = base_url + student_directory + url
-			end = 69
-			filename = "students12.csv"
+			filename = "students8.csv"
 			students_scrapper(url, end, filename)
 			myLoop = False
 
@@ -249,8 +194,6 @@ def main():
 		else:
 			clear()
 			mainchoice()
-
-
 
 if __name__ == '__main__':
 	main()
