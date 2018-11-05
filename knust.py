@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import csv
 from util import *
@@ -30,6 +30,12 @@ try:
 	from requests import ConnectionError
 except ImportError:
 	print("Warning: missing package 'requests' is required")
+
+try:
+	import prettytable
+except ImportError:
+	print("Warning: missing package 'prettytable' is required")
+
 # Import bs4
 try:
 	from bs4 import BeautifulSoup
@@ -62,6 +68,8 @@ def students_scrapper(url, end, filename):
 
 	csvFile = open(filename, "wt+")
 	writer = csv.writer(csvFile)
+	# Heading of the table
+	writer.writerow(["Student ID", "Full Name", "Programme"])
 
 	try:
 		print("\033[93m[+] Loading...(Please wait)\033[0m")
@@ -82,7 +90,8 @@ def students_scrapper(url, end, filename):
 					csvRow = []
 					for cell in row.find_all(["td", "th"]):
 						# Correct UnicodeError
-						csvRow.append(cell.get_text().encode("ascii", "ignore"))
+						cell_text = cell.get_text().encode("ascii", "ignore")
+						csvRow.append(cell_text.decode("utf-8"))
 						
 						if len(csvRow) == 4:
 							if csvRow[0].isdigit():
@@ -90,20 +99,21 @@ def students_scrapper(url, end, filename):
 
 								if csvRow[0].isdigit():
 									writer.writerow(csvRow)
-							else:
-								None
-						else:
-							None
+
 			except Exception as e:
 				print("No rows found")
 
 			full_url = url
 
 	except ConnectionError:
-		print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url))
+		print("\033[91m[-]\033[0m Problem connecting to {}".format(base_url)[:-22])
 
 		if os.path.exists(filename):
 				os.remove(filename)
+
+	except KeyboardInterrupt:
+		print("You pressed Ctrl+C\nExiting...")
+		sys.exit(1)
 
 	print("\n\033[92m[*]\033[0m Done...")	
 	

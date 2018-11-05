@@ -1,4 +1,4 @@
-#!/usr/bin/evn python
+#!/usr/bin/evn python3
 import os
 import sys
 import time
@@ -35,8 +35,6 @@ def clear():
 		os.system("clear")
 	elif os.name == "nt":
 		os.system("cls")
-	elif os.name == "darwin":
-		os.system("clear")
 	else:
 		os.system("clear")
 
